@@ -30,8 +30,6 @@ return new class extends Migration
             $table->string('photo')->nullable();
             $table->string('lessonStatus');
 
-            $table->unsignedBigInteger('lessonParticipants');
-            $table->foreign('lessonParticipants')->references('id')->on('participants');
 
             $table->timestamps();
         });

@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('participants', function (Blueprint $table) {
             $table->id();
+
             $table->unsignedBigInteger('lesson_id');
-            $table->foreign('lesson_id')->references('lessons')->on('lessons');
+            $table->foreign('lesson_id')->references('id')->on('lessons');
 
             $table->unsignedBigInteger('user_id')->constrained();
             $table->foreign('user_id')->references('id')->on('users');
-            
+
             $table->timestamps();
         });
     }

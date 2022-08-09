@@ -44,7 +44,7 @@
             </a>
         </div> --}}
         <div class="col col-lg-4 col-sm-12 col-md-3">
-            <a href="{{Route('deleteLesson')}}?id={{$lesson->id}}" class="btn btn-info btn-lg">
+            <a href="{{Route('showOneLessonStudent')}}?id={{$lesson->id}}" class="btn btn-info btn-lg">
                 more on the lesson
             </a>
         </div>

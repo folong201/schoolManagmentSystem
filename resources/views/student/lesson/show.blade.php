@@ -3,7 +3,6 @@
 
 @section('content')
 
-{{-- <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button> --}}
     @foreach ($lessons as $lesson)
         <br>
         <div class="shadow p-3 mb-5 bg-white rounded">

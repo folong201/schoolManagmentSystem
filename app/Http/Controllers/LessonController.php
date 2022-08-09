@@ -48,6 +48,7 @@ class LessonController extends Controller
         $newLesson = new lesson();
         $newLesson->lessonName = $request->lessonName;
         $newLesson->creator_id = auth()->user()->id;
+        // dd($request->lessonTeacher);
         $newLesson->teacher_id = $request->lessonTeacher;
         $newLesson->lessonDescription = $request->lessonDescription;
         $newLesson->lessonPlace = $request->lessonPlace;
@@ -55,7 +56,7 @@ class LessonController extends Controller
         $newLesson->lessonHour = $request->lessonHour;
         $newLesson->photo = $request->photo;
         $newLesson->lessonStatus = "Up Comming";
-        $newLesson->lessonParticipants = 1;
+        // $newLesson->lessonParticipants = 1;
         $newLesson->save();
         // dd($request);
         return redirect('teacherDashboard')->with('message',"le cour a ete creer avec succees");
@@ -126,7 +127,7 @@ class LessonController extends Controller
         $newLesson->lessonHour = $request->lessonHour;
         $newLesson->photo = $request->photo;
         $newLesson->lessonStatus = "Up Comming";
-        $newLesson->lessonParticipants = 1;
+        // $newLesson->lessonParticipants = 1;
         // dd($newLesson);
         $newLesson->save();
         // dd($request);
@@ -182,9 +183,9 @@ class LessonController extends Controller
 
         /*
             ici, il faut recuperer tout le eleves ont qui sont inscit a ce cours
-        */
-        $inscrits = participant::where('lesson_id',$request['id'])->student()->get();
-        dd("liste des etudiant inscrit au cour de inscrits",$inscrits);
+        // */
+        // $inscrits = participant::where('lesson_id','=',$request['id'])->get();
+        // dd("liste des etudiant inscrit au cour de inscrits",$inscrits);
         return view('teacher.lesson.lessonInfo',compact('lessons'));
     }
 
