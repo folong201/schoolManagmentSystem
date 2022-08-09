@@ -2,9 +2,9 @@
 
 
 @section('content')
-<div class="creation">
+{{-- <div class="creation">
 <a href="{{Route('createLesson')}}" class="btn btn-primary btn-lg btn-block fluid">create a newlesson</a>
-<br>
+<br> --}}
 </div>
 {{-- <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button> --}}
     @foreach ($lessons as $lesson)
@@ -23,11 +23,11 @@
        <div class="row">
         <hr>
         <div class="col col-lg-4 col-sm-12 col-md-3">
-            <a href="{{Route('updateLesson')}}?id={{$lesson->id}}" class="btn btn-secondary btn-lg">
-                update the course
+            <a href="{{Route('updateLesson')}}?id={{$lesson->id}}" class="btn btn-success btn-lg">
+                Mark presence
             </a>
         </div>
-        <div class="col col-lg-4 col-sm-12 col-md-3">
+        {{-- <div class="col col-lg-4 col-sm-12 col-md-3">
             <a href="{{Route('startLesson')}}?id={{$lesson->id}}" class="btn btn-warning btn-lg">
                 start the course
             </a>
@@ -47,7 +47,7 @@
             <a href="{{Route('deleteLesson')}}?id={{$lesson->id}}" class="btn btn-info btn-lg">
                 more on the lesson
             </a>
-        </div>
+        </div> --}}
        </div>
        <br> <br>
        <div class="shadow-lg p-3 mb-5 bg-white rounded alert alert-success">{{$lesson->lessonStatus}}</div>

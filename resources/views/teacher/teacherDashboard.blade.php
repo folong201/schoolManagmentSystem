@@ -117,7 +117,7 @@
               <h5 class="card-title uper">Upgrade student</h5>
               <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
-            <a href="{{Route('startLesson')}}" class="btn btn-warning lg uper">upgrade students</a>
+            <a href="{{Route('studentlist')}}" class="btn btn-warning lg uper">upgrade students</a>
           </div>
         </div>
         <div class="col">
@@ -127,7 +127,7 @@
               <h5 class="card-title uper">Exclude Student</h5>
               <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
-            <a href="{{Route('startLesson')}}" class="btn btn-danger">Exclude Student</a>
+            <a href="{{Route('studentlist')}}" class="btn btn-danger">Exclude Student</a>
           </div>
         </div>
         <div class="col">

@@ -50,6 +50,18 @@
 </div>
 
 @endforeach
+<center>
+    <h1>
+        liste des inscrit
+    </h1>
+</center>
+
+zone pour afficher les personnes inscrit au lesson
+{{-- @forelse ($collection as $item)
+
+@empty
+
+@endforelse --}}
 
 @endsection
 {{-- @show --}}

@@ -93,7 +93,11 @@
         {{-- <h1>Components</h1> <br> --}}
         @if(session()->has('message'))
             <div class="alert alert-success">
-                {{ session()->get('message') }}
+                <center>
+                    <h1>
+                        {{ session()->get('message') }}
+                    </h1>
+                </center>
             </div>
         @endif
         @if(session()->has('error'))

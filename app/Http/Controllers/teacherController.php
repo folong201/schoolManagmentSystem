@@ -32,4 +32,13 @@ class teacherController extends Controller
         $freeTeacher = User::where('status','teacher')->get();
         return response()->json( $freeTeacher );
     }
+    public function deleteStudent(Request $request){
+        $newTeacher = User::findOrFail($request->id);
+        if ($newTeacher==null) {
+            return redirect()->back()->with('error',"the student you wnat to delete don't exist");
+        }
+        // $newTeacher->status = 'teacher';
+        $newTeacher->delete();
+        return redirect()->route('studentlist')->with('message',"the student have been excluded whit succees");
+    }
 }

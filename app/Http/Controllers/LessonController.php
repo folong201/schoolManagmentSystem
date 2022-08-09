@@ -7,6 +7,8 @@ use App\Http\Requests\UpdatelessonRequest;
 use App\Models\lesson;
 use Illuminate\Http\Request;
 use App\http\Requests\StorecourseRequest;
+use App\Models\participant;
+use App\Models\User;
 use Illuminate\Support\Facades\Redis;
 
 class LessonController extends Controller
@@ -177,6 +179,12 @@ class LessonController extends Controller
         $lessons = $newLesson->only($request['id']);
         // dd($lessons);
         // return "info on signe course {$_GET['id']}";
+
+        /*
+            ici, il faut recuperer tout le eleves ont qui sont inscit a ce cours
+        */
+        $inscrits = participant::where('lesson_id',$request['id'])->student()->get();
+        dd("liste des etudiant inscrit au cour de inscrits",$inscrits);
         return view('teacher.lesson.lessonInfo',compact('lessons'));
     }
 

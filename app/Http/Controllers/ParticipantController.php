@@ -49,7 +49,7 @@ class ParticipantController extends Controller
             $participant->lesson_id = $request->id;
             $participant->user_id = Auth::user()->id;
             $participant->save();
-            return redirect('student.studentDashboard')->with('messoge',"success suscription to the course");
+            return redirect()->back()->with('message',"success suscription to the course");
 
         } else {
 
@@ -109,14 +109,18 @@ class ParticipantController extends Controller
             //creation of the new participant
             $lessons = lesson::findOrFail($request->id);
             // $lessons->user =0;
-            $student = participant::where("lesson_id=".$request->id." and user_id=".Auth::user()->id);
-            // $ok = new participant();
+            $student = participant::where([
+                ["lesson_id","=",$request->id],
+                ["user_id","=",Auth::user()->id]
+            ]);
             // $ok = DB::table('participants')->where(['lesson_id'=>$request->id,'user_id'=>Auth::user()->id])->first();
             // $ok->delete();
             // dd($student);
+            // $ok = new participant();
             $student->delete();
-            dd("successFull Unsuscription to the course");
-            return redirect('student.studentDashboard')->with('messoge',"successFull Unsuscription to the course");
+            // dd($student);
+            // dd("successFull Unsuscription to the course");
+            return back()->with('message',"successFull Unsuscription to the course");
 
         } else {
 
